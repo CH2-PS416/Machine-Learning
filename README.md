@@ -1,4 +1,5 @@
 #Machine-Learning
+
 ##Data Understanding
   Untuk proses pengembangan model atau model development, dataset yang digunakan adalah data tourism Indonesia yang diambil dari kaggle yang dihimpun oleh tim GetLoc, salah satu tim Capstone Project Bangkit Academy 2021. Dataset ini berisi informasi mengenai tempat wisata yang dari beberapa kota di Indonesia yaitu Jakarta, Surabaya, Semarang, Bandung, dan Yogyakarta. Dataset ini juga terdiri dari 4 file yaitu :
 1. pariwisata_ dengan _id.csv yang berisi informasi tempat wisata di 5 kota besar di Indonesia berjumlah ~400
@@ -8,6 +9,7 @@
 
 ##Preparation Data
   Tahap ini dilakukan Pengecekan missing value dan statistika deskriptif, selanjutya dilakukan penggabungan file menjadi kesatuan agar sesuai dengan pengembangan model yang dibuat. 
+  
 ##Modeling 
 ###Model Development dengan Content Based Filtering
   Kami menggunakan count vetorize untuk mengonversi fitur penting setiap tempat wisata menjadi representasi vektor. Selanjutnya menghitung kemiripan antar item menggunakan metrik cosine similarity (derajat kesamaan) antar tempat wisata berdasarkan matriks count vectorize yang sudah dibuat sebelumnya.  Kemudian, dibuatkan dataframe dari hasil perhitungan cosine similarity dengan baris dan kolom berupa nama tempat wisata. Selanjutnya, dibuatkan fungsi  rekomendasi_wisata_by_keyword untuk menampilkan hasil rekomendasi berbasis konten berupa nama tempaat wisata dengan kategori yang diinginkan berdasarkan nama kota.
