@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendations</title>
+</head>
+<body>
+    <h1>Recommendations</h1>
+    {% if alert_message %}
+        <script>
+            alert("{{ alert_message }}");
+            window.location.href = "/";
+        </script>
+    {% else %}
+        <ul>
+        {% for recommendation in recommendations %}
+            <li>
+                <strong>{{ recommendation.name }}</strong><br>
+                Category: {{ recommendation.category }}<br>
+                City: {{ recommendation.city }}<br>
+                Description: {{ recommendation.description }}<br>
+                Rating: {{ recommendation.rating }}
+            </li>
+        {% endfor %}
+        </ul>
+        <a href="/">Kembali ke Halaman Utama</a>
+    {% endif %}
+</body>
+</html>
