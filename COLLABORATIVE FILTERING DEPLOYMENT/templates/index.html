@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendations</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Recommendations for User</h1>
+    <div id="recommendations"></div>
+
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                url: "http://localhost:5000/recommendations/123", // Ganti dengan user_id yang diinginkan
+                type: "GET",
+                success: function(data) {
+                    var recommendations = data.recommended_places;
+                    var html = "<h2>Recommended Places</h2><ul>";
+                    for (var i = 0; i < recommendations.length; i++) {
+                        html += "<li><strong>" + recommendations[i].Place + "</strong> - " + recommendations[i].City + "<br>" + recommendations[i].Description + "</li>" +  recommendations[i].Rating;
+                    }
+                    html += "</ul>";
+                    $("#recommendations").html(html);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
